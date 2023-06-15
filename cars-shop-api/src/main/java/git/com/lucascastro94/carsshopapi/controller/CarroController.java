@@ -1,13 +1,14 @@
 package git.com.lucascastro94.carsshopapi.controller;
 
 import git.com.lucascastro94.carsshopapi.dto.CarroDTO;
+import git.com.lucascastro94.carsshopapi.exception.CarCreatingException;
 import git.com.lucascastro94.carsshopapi.exception.CarNotFoundException;
+import git.com.lucascastro94.carsshopapi.exception.PlateAlreadyExistException;
 import git.com.lucascastro94.carsshopapi.model.Carro;
 import git.com.lucascastro94.carsshopapi.services.CarroService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class CarroController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Carro create(@RequestBody @Valid CarroDTO carroDTO)
+    public Carro create(@RequestBody @Valid CarroDTO carroDTO) throws CarCreatingException, PlateAlreadyExistException
     {
         return carroService.create(carroDTO);
     }

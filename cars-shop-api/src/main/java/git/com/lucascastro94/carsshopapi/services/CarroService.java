@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import git.com.lucascastro94.carsshopapi.dto.CarroDTO;
 import git.com.lucascastro94.carsshopapi.exception.CarCreatingException;
 import git.com.lucascastro94.carsshopapi.exception.CarNotFoundException;
+import git.com.lucascastro94.carsshopapi.exception.PlateAlreadyExistException;
 import git.com.lucascastro94.carsshopapi.model.Carro;
 import git.com.lucascastro94.carsshopapi.repository.CarroRepository;
 import lombok.AllArgsConstructor;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -28,7 +30,14 @@ public class CarroService {
                 map(carro -> objMapper.convertValue(carro, CarroDTO.class)).toList();
     }
 
-    public Carro create(CarroDTO carroDTO) throws CarCreatingException {
+    public Carro create(CarroDTO carroDTO) throws CarCreatingException, PlateAlreadyExistException {
+
+        Optional<Carro> aptCarro = carroRepository.findByPlaca(carroDTO.getPlaca());
+
+        if(aptCarro.isPresent()){
+            throw new PlateAlreadyExistException(carroDTO.getPlaca());
+        }
+
         Carro carro = objMapper.convertValue(carroDTO, Carro.class);
         carroRepository.save(carro);
         return carro;
