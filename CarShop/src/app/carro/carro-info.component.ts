@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Carro } from "./carro";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { CarroService } from "./carro.service";
 
 @Component({
@@ -10,7 +10,7 @@ export class CarroinfoComponent implements OnInit{
 
     carro: Carro
 
-    constructor(private activateRoute:ActivatedRoute, private carroService: CarroService){}
+    constructor(private activateRoute:ActivatedRoute, private carroService: CarroService, private router: Router){}
 
     ngOnInit(): void {
         
@@ -24,7 +24,10 @@ export class CarroinfoComponent implements OnInit{
     save() : void{
         this.carroService.save(this.carro)
         .subscribe({
-            next: carro => console.log("produto salvo: ",carro),
+            next: carro => {
+                console.log("produto salvo: ",carro)
+                this.router.navigateByUrl('carros')
+            },
             error: err => console.log("Error: "+err)
         })
     }

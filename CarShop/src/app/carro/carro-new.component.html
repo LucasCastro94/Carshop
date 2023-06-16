@@ -75,7 +75,7 @@
             <div class="col col-lg-6 text-center">
                 <label>Placa</label>
 
-                <input [(ngModel)]="carro.placa" maxlength="8" required name="placa" #carroPlaca="ngModel" class="form-control" pattern="[A-Za-z]{3}[A-Za-z0-9]{4}"
+                <input [(ngModel)]="carro.placa" maxlength="7" required name="placa" #carroPlaca="ngModel" class="form-control" pattern="[A-Za-z]{3}[A-Za-z0-9]{4}"
                 [ngClass]="{'is-invalid': carroPlaca.invalid && carroForm.controls['placa'].touched}" />
 
                 <div *ngIf="carroPlaca.invalid && (carroPlaca.dirty || carroPlaca.touched)" class="invalid-feedback">
