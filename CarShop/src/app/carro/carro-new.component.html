@@ -1,0 +1,120 @@
+<h2>Adicionar novo veiculo</h2>
+
+<hr />
+
+<form #carroForm="ngForm">
+
+    <!-- Marca -->
+    <div class="form-group ">
+
+        <div class="row justify-content-md-center mt-5">
+
+            <div class="col col-lg-6 text-center">
+                <label>Marca</label>
+
+                <input type="text" [(ngModel)]="carro.marca" required name="marca" #carroMarca="ngModel" class="form-control"
+                [ngClass]="{'is-invalid': carroMarca.invalid && carroForm.controls['marca'].touched}" />
+
+                <div *ngIf="carroMarca.invalid && carroForm.controls['marca'].touched" class="invalid-feedback">
+                    <span>Informe a marca</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Modelo -->
+    <div class="form-group ">
+
+        <div class="row justify-content-md-center mt-3">
+
+            <div class="col col-lg-6 text-center">
+                <label>Modelo</label>
+
+                <input [(ngModel)]="carro.modelo" type="text" required name="modelo" #carroModelo="ngModel" class="form-control"
+                [ngClass]="{'is-invalid': carroModelo.invalid && carroForm.controls['modelo'].touched}" />
+
+                <div *ngIf="carroModelo.invalid && carroForm.controls['modelo'].touched" class="invalid-feedback">
+                    <span>Informe o modelo</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Ano -->
+
+    <div class="form-group ">
+
+        <div class="row justify-content-md-center mt-3">
+
+            <div class="col col-lg-6 text-center">
+                <label>Ano</label>
+
+                <input [(ngModel)]="carro.ano" type="number" required name="ano" #carroAno="ngModel" class="form-control"
+                [ngClass]="{'is-invalid': carroAno.invalid && carroForm.controls['ano'].touched}" />
+
+                <div *ngIf="carroAno.invalid && carroForm.controls['ano'].touched" class="invalid-feedback">
+                    <span>Informe o ano</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Placa -->
+
+    <div class="form-group ">
+
+        <div class="row justify-content-md-center mt-3">
+
+            <div class="col col-lg-6 text-center">
+                <label>Placa</label>
+
+                <input [(ngModel)]="carro.placa" maxlength="8" required name="placa" #carroPlaca="ngModel" class="form-control" pattern="[A-Za-z]{3}[A-Za-z0-9]{4}"
+                [ngClass]="{'is-invalid': carroPlaca.invalid && carroForm.controls['placa'].touched}" />
+
+                <div *ngIf="carroPlaca.invalid && (carroPlaca.dirty || carroPlaca.touched)" class="invalid-feedback">
+                    <span>Informe uma placa válida (3 letras e seus 4 Alfanumericos)</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Valor -->
+
+    <div class="form-group ">
+
+        <div class="row justify-content-md-center mt-3">
+
+            <div class="col col-lg-6 text-center">
+                <label>Valor</label>
+
+                <input [(ngModel)]="carro.valor" type="number" required name="valor" #carroValor="ngModel" class="form-control"
+                [ngClass]="{'is-invalid': carroValor.invalid && carroForm.controls['valor'].touched}" />
+
+                <div *ngIf="carroValor.invalid && carroForm.controls['valor'].touched" class="invalid-feedback">
+                    <span>Informe o valor</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-md-center mt-4">
+        <div class="col col-lg-6 text-center">
+            <button [disabled]="carroForm.invalid" (click)="save()" class="btn btn-primary me-4">Save</button>
+            <button [routerLink]="['/carros']" class="btn btn-secondary">Back</button>
+        </div>
+
+    </div>
+
+
+</form>

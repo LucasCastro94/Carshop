@@ -3,7 +3,7 @@
 <div class="form-group row">
     <label class="col-sm-2 col-form-label">Filter by:</label>
     <div class="col-sm-10">
-        <input type="text" [(ngModel)]="filter" class="form-control">
+        <input type="text" [(ngModel)]="filter" placeholder="Pesquise por modelo, marca ou ano" class="form-control">
     </div>
 </div>
 
@@ -18,7 +18,6 @@
         <th>Editar</th>
     </thead>
     <tbody>
-        <!--rodando um for dentro do courses do course.component.ts -->
         <tr *ngFor="let carro of filteredCarros">
           
             <td>{{carro.marca}}</td>
@@ -27,8 +26,7 @@
             <td>{{carro.placa}}</td>
             <td>{{carro.valor}}</td>
             <td>
-                <!-- a rota esta definida como /courses/info, e passando o course.id como parametro -> (vem da classe course.ts ex: course.name) -->
-                <a [routerLink]="['/carro/info', carro.id]" class="btn btn-primary me-2">Edit</a>
+                <a [routerLink]="['/carros/info', carro.id]" class="btn btn-primary me-2">Edit</a>
                 <button (click)="deleteById(carro.id)"  class="btn btn-danger">Delete</button>
             </td>
 

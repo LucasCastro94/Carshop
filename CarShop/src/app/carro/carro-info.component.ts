@@ -25,7 +25,7 @@ export class CarroinfoComponent implements OnInit{
         this.carroService.save(this.carro)
         .subscribe({
             next: carro => console.log("produto salvo: ",carro),
-            error: err => console.log("Error: "+err+"coco")
+            error: err => console.log("Error: "+err)
         })
     }
 }

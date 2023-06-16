@@ -23,7 +23,7 @@ public class CarroDTO {
     private int ano;
 
     @NotBlank
-    @Length(min = 8,max = 8)
+    @Length(min = 7,max = 7)
     private String placa;
 
     @NotNull

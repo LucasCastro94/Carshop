@@ -4,11 +4,13 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { CarroinfoComponent } from "./carro-info.component";
+import { CarronewComponent } from "./carro-new.component";
 
 @NgModule({
     declarations: [
         CarrosListComponent,
-        CarroinfoComponent
+        CarroinfoComponent,
+        CarronewComponent
     ],
     imports:[
         CommonModule,
@@ -19,6 +21,9 @@ import { CarroinfoComponent } from "./carro-info.component";
             },
             {
                 path: 'carros/info/:id', component: CarroinfoComponent
+            },
+            {
+                path:'carro/new', component: CarronewComponent
             }
         ])
     ]
