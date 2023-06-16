@@ -15,9 +15,9 @@ import { Error404 } from './core/component/404/error404.component';
   ],
   imports: [
     BrowserModule,
-    CoreModule,
     CarroModule,
     HttpClientModule,
+    CoreModule,
     RouterModule.forRoot([
       {
         path:'', redirectTo: 'carro',pathMatch: 'full'
