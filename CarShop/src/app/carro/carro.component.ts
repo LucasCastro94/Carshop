@@ -30,7 +30,7 @@ export class CarrosListComponent implements OnInit{
         })
     }
 
-    _deleteById(carroId:number) : void{
+    deleteById(carroId:number) : void{
         this.carroService.deleteById(carroId).subscribe({
             next: ()=> this._listAll(),
             error: err =>alert("Falha ao deletar")

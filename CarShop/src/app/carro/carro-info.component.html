@@ -1,0 +1,107 @@
+<h2>Course info</h2>
+
+<hr />
+
+<form #carroForm="ngForm">
+
+    <!-- Marca -->
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Marca:</label>
+        <div class="col-sm-10">
+         
+            <input type="text" [(ngModel)]="carro.marca" required name="marca" #carroMarca="ngModel"
+                [ngClass]="{'is-invalid':carroMarca.invalid}" class="form-control">
+
+            <div class="invalid-feedback">
+                <span>Informe a marca</span>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Modelo -->
+    <div class="form-group row">
+
+        <label class="col-sm-2 col-form-label">Modelo:</label>
+
+        <div class="col-sm-10">
+
+            <input [(ngModel)]="carro.modelo" type="text"  required name="modelo" #carroModelo="ngModel"
+                [ngClass]="{'is-invalid':carroModelo.invalid}" class="form-control">
+
+            <div class="invalid-feedback">
+                <span>Informe o modelo</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Ano -->
+
+    <div class="form-group row">
+
+        <label class="col-sm-2 col-form-label">Ano:</label>
+
+        <div class="col-sm-10">
+
+            <input [(ngModel)]="carro.ano" type="number"  required name="ano" #carroAno="ngModel"
+                [ngClass]="{'is-invalid':carroAno.invalid}" class="form-control">
+
+            <div class="invalid-feedback">
+                <span>Informe o ano</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Placa -->
+
+    <div class="form-group row">
+
+        <label class="col-sm-2 col-form-label">Placa:</label>
+
+        <div class="col-sm-10">
+
+            <input [(ngModel)]="carro.placa" required name="placa" #carroPlaca="ngModel"
+                [ngClass]="{'is-invalid':carroPlaca.invalid}" class="form-control">
+
+            <div class="invalid-feedback">
+                <span>Informe a placa</span>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Valor -->
+
+    <div class="form-group row">
+
+        <label class="col-sm-2 col-form-label">Valor:</label>
+
+        <div class="col-sm-10">
+
+            <input [(ngModel)]="carro.valor" type="number" required name="valor" #carroValor="ngModel"
+                [ngClass]="{'is-invalid':carroValor.invalid}" class="form-control">
+
+            <div class="invalid-feedback">
+                <span>Informe o valor</span>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+      <!--se algum campo for invalido entao desabilita o botao -->
+    <button [disabled]="carroForm.invalid" (click)="save()" class="btn btn-primary me-4">Save</button>
+    <button [routerLink]="['/carro']" class="btn btn-secondary">Back</button>
+
+
+
+</form>

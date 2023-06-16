@@ -41,6 +41,13 @@ public class CarroController {
        return carroService.deleteById(id);
     }
 
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public CarroDTO findById(@PathVariable Long id) throws CarNotFoundException
+    {
+        return carroService.findById(id);
+    }
+
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Carro atualizar(@PathVariable Long id, @RequestBody CarroDTO carroDTO) throws CarNotFoundException

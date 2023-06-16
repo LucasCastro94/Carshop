@@ -20,7 +20,7 @@ import { Error404 } from './404/error404.component';
     CoreModule,
     RouterModule.forRoot([
       {
-        path:'', redirectTo: 'carro',pathMatch: 'full'
+        path:'', redirectTo: 'carros',pathMatch: 'full'
       },
       {
         path:'**', component: Error404

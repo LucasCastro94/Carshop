@@ -10,6 +10,9 @@ import org.hibernate.validator.constraints.Length;
 @AllArgsConstructor
 @Data
 public class CarroDTO {
+
+    Long id;
+
     @NotBlank
     private String marca;
 

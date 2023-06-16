@@ -28,7 +28,7 @@
             <td>{{carro.valor}}</td>
             <td>
                 <!-- a rota esta definida como /courses/info, e passando o course.id como parametro -> (vem da classe course.ts ex: course.name) -->
-                <a [routerLink]="['/courses/info', carro.id]" class="btn btn-primary me-2">Edit</a>
+                <a [routerLink]="['/carro/info', carro.id]" class="btn btn-primary me-2">Edit</a>
                 <button (click)="deleteById(carro.id)"  class="btn btn-danger">Delete</button>
             </td>
 

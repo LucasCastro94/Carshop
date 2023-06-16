@@ -43,6 +43,14 @@ public class CarroService {
         return carro;
     }
 
+    public CarroDTO findById(Long id) throws CarNotFoundException {
+        Carro carroSaved = carroRepository.findById(id)
+                .orElseThrow(() -> new CarNotFoundException(id));
+        return objMapper.convertValue(carroSaved,CarroDTO.class);
+    }
+
+
+
     public Long deleteById(Long id) throws CarNotFoundException {
         Carro carroSaved = carroRepository.findById(id)
                 .orElseThrow(() -> new CarNotFoundException(id));
