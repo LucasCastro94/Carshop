@@ -62,13 +62,12 @@
 
         <div class="col-sm-10">
 
-            <input [(ngModel)]="carro.placa" required name="placa" #carroPlaca="ngModel"
-                [ngClass]="{'is-invalid':carroPlaca.invalid}" class="form-control">
+            <input [(ngModel)]="carro.placa"  maxlength="7" required name="placa" #carroPlaca="ngModel" pattern="[A-Za-z]{3}[A-Za-z0-9]{4}"
+            [ngClass]="{'is-invalid': carroPlaca.invalid && carroForm.controls['placa'].touched}" />
 
-            <div class="invalid-feedback">
-                <span>Informe a placa</span>
+            <div *ngIf="carroPlaca.invalid && (carroPlaca.dirty || carroPlaca.touched)" class="invalid-feedback">
+                <span>Informe uma placa válida (3 letras e seus 4 Alfanumericos)</span>
             </div>
-
         </div>
     </div>
 

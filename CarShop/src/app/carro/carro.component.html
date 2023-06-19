@@ -22,8 +22,8 @@
             <td>{{carro.marca}}</td>
             <td>{{carro.modelo}}</td>
             <td>{{carro.ano}}</td>
-            <td>{{carro.placa}}</td>
-            <td>{{carro.valor}}</td>
+            <td>{{carro.placa | plate }}</td>
+            <td>{{carro.valor | money }}</td>
             <td>
                 <a [routerLink]="['/carros/info', carro.id]" class="btn btn-primary me-2">Edit</a>
                 <button (click)="deleteById(carro.id)"  class="btn btn-danger">Delete</button>

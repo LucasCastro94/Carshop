@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { CarroinfoComponent } from "./carro-info.component";
 import { CarronewComponent } from "./carro-new.component";
+import { AppPipeModule } from "../shared/pipe/app-pipe.module";
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import { CarronewComponent } from "./carro-new.component";
     ],
     imports:[
         CommonModule,
+        AppPipeModule,
         FormsModule,
         RouterModule.forChild([
             {

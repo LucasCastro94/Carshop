@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
 import { CarroModule } from './carro/carro.module';
 import { Error404 } from './404/error404.component';
+import { AppPipeModule } from './shared/pipe/app-pipe.module';
 
 @NgModule({
   declarations: [
