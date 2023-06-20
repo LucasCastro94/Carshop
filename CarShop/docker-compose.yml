@@ -1,0 +1,15 @@
+
+version: '3.4'
+
+services:
+  carshop-docker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: carshop-docker
+    ports:
+      - 4200:80
+    networks:
+      - carshop-network
+networks:
+    carshop-network:

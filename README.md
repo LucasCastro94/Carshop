@@ -1,4 +1,4 @@
-##CarShop
+# CarShop
 Trata-se de um projeto simples para gerenciar as vendas de veículos possibilitando visualizar os carros disponíveis e seus preços, é possível deletar, criar, editar e buscar atravéz de um filtro.
 
 **Em conceitos técnicos:**
@@ -18,15 +18,23 @@ Va até a pasta cars-shop-api e abra um terminal dentro desse diretorio e execut
 ```gradle bootRun```
 
 em seguida dentro da pasta CarShop abra um terminal dentro desse diretorio e execute:
+```npm install``` em seguida após instalar todas dependencias:
 ```ng serve```
 
 Pronto agora so acessar o localhost:4200.
+
+
+>Outro meio é atravéz do dockercompose, cada aplicação tem o seu dockercompose, por esse meio ele criara 2 containers rodando a aplicação
 
 **OBS: Importante a porta 8080 e 4200 estar livre**
 
 screenshots:
 
-![]</~screenshots/scr1.png>
-![]</~screenshots/scr2.png>
-![]</~screenshots/scr3.png>
-![]</~screenshots/scr4.png>
+![](https://github.com/LucasCastro94/Carshop/blob/master/screenshots/scr1.png)
+
+![](https://github.com/LucasCastro94/Carshop/blob/master/screenshots/scr2.png)
+
+![](https://github.com/LucasCastro94/Carshop/blob/master/screenshots/scr3.png)
+
+![](https://github.com/LucasCastro94/Carshop/blob/master/screenshots/scr4.png)
+

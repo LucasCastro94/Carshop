@@ -1,0 +1,16 @@
+
+version: '3.4'
+
+services:
+  carshop-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: carshop-api
+    ports:
+      - 8080:8080
+    networks:
+      - carshop-network
+
+networks:
+  carshop-network:
