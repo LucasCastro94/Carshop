@@ -32,8 +32,6 @@ screenshots:
 
 ![](https://github.com/LucasCastro94/Carshop/blob/master/screenshots/scr1.png)
 
-![](https://github.com/LucasCastro94/Carshop/blob/master/screenshots/scr2.png)
-
 ![](https://github.com/LucasCastro94/Carshop/blob/master/screenshots/scr3.png)
 
 ![](https://github.com/LucasCastro94/Carshop/blob/master/screenshots/scr4.png)
